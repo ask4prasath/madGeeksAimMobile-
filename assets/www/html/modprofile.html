@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.dynamic.popup.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" />
+<link href="css/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.mobile.min.js"></script>
+<script src="js/gmaps.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/jquery.md5.js"></script>
+<script type="text/javascript"
+	src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog2.min.js"></script>
+<title>srndpt</title>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&v=3"></script>
+<link href="css/srndpt.css" rel="stylesheet" type="text/css" />
+</head>
+
+<script type="text/javascript">
+		$.getJSON( "http://appserver01.srndpt.co/getexpertise.php", function( data ) {
+			$.each(data, function (index, value) {
+				$("#expertise").append($("<option />").val(value.id).text(value.display_value));
+			});	
+		});
+		
+</script>
+<body>
+<!-- Page modify profile -->
+	<div id="pagechangeprofile" data-role="page" data-theme="a">
+		<div data-role="header">
+			<a href="#" data-theme="d" data-icon="back" data-rel="back"
+				data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button">Open left panel</a>
+			<h1>Modify Profile</h1>
+		</div>
+		<table style="width:100%">
+			<tr>
+				<td width="90%"><label for="myHome">My Home</label> <input
+					type="text" id="myHome" readonly /></td>
+				<td style="padding-top: 25px;" width="20%"><a
+					href="#pagelocationselect"
+					class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext"
+					data-transition="slide">Location Icon</a></td>
+			</tr>
+			<tr>
+				<td width="90%"><label for="myCurrWork">My Current
+						Workspace</label> <input type="text" id="myCurrWork" readonly /></td>
+				<td style="padding-top: 25px;" width="20%"><a
+					href="#pagelocationselectwork" id="pagelocationselectid"
+					class="ui-btn ui-corner-all ui-icon-location ui-btn-icon-notext"
+					data-transition="slide">Location Icon</a></td>
+			</tr>
+			<tr>
+				<td width="90%"><label for="myHome">My Skills</label>
+						<ul data-role="listview" data-filter="true"
+							data-filter-reveal="true" data-inset="true" 
+							data-filter-placeholder="Search Skills..." class="ui-listview" id="skillSetId">
+						</ul>
+					</td>
+			</tr>
+			
+			<tr>
+				<td width="90%"><label for="myHome">Expertise Level</label>
+						<SELECT name="expertise" id="expertise">
+							<option value="0">Select expertise</option>
+						</SELECT>
+					</td>
+			</tr>
+			
+		</table>
+		<div id="controlGrp">
+			<a href="#saveModifyProfile"
+				class="ui-btn ui-btn-inline ui-shadow ui-corner-all"
+				data-transition="slide" id="saveProfile">Save</a> <a
+				href="#resetModifyProfile" id="resetProfileInputs" 
+				class="ui-btn ui-btn-inline ui-shadow ui-corner-all">Reset</a>
+		</div>
+	</div>
+</body>
+</html>

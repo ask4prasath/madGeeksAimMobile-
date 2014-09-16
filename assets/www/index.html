@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+<script src="js/jquery.min.js"></script>
+
+<script src="js/jquery.mobile.dynamic.popup.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" />
+<link href="css/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.mobile.min.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+<link href="css/akamai.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.min.css"> 
+<script src="js/bootstrap.min.js"></script> 
+<link href="css/font-awesome.min.css">
+<!-- include summernote css/js-->
+<link href="css/summernote.css" />
+<script src="js/summernote.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="js/d3.min.js"></script>
+<script src="js/nv.d3.min.js"></script>
+<script src="js/models/legend.js"></script>
+<script src="js/models/pie.js"></script>
+<script src="js/models/pieChart.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/etherpad.js"></script>
+</head>
+<body>
+	<!-- Main Page -->
+	<div id="pageone" data-role="page" data-theme="a">
+		<div data-role="header">
+			<h1>AIM</h1>
+		</div>
+		<div id="content" data-role="content">
+			<form>
+				<input type="text" placeholder="Username" name="username"
+					id="username" /> <input type="password" placeholder="Password"
+					name="password" id="password" />
+				<div id="controlGrp">
+					<a href="#"
+						class="smallBtn ui-btn ui-btn-inline ui-shadow ui-corner-all"
+						id="submit">Login</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- Main Page -->
+	<div id="mainpage" data-role="page" data-theme="a">
+		<div data-role="header">
+			<h1>AIM</h1>
+			<a href="#left-panel" data-icon="bars" data-iconpos="notext"
+				data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open
+				left panel</a>
+		</div>
+		<div id="content" data-role="content">
+			<!-- dynmacially insert search incidents over here -->
+		    <form class="ui-filterable">
+      				<input id="myFilter" data-type="search" placeholder="Search for incidents..">
+    		</form>
+    		<ul data-role="listview" data-filter="true" data-input="#myFilter" data-inset="true" id="ulIncidents" >
+    		</ul>
+		</div>
+		<div data-role="panel" id="left-panel" data-theme="a"
+			style="background-color: rgb(246, 246, 246);">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#incidents" data-icon="delete"
+					data-transition="flip"
+					class="ui-btn ui-btn-icon-left ui-icon-alert">Incidents</a></li>
+
+				<li><a href="#statsOpenIncidents" data-icon="delete" data-transition="flip"
+					class="ui-btn ui-btn-icon-left ui-icon-info">Statistics</a></li>
+				<li><a href="#etherpad" data-icon="edit" data-transition="flip"
+					class="ui-btn ui-btn-icon-left ui-icon-edit">Etherpad</a></li>
+				<li><a href="#chatPage" data-icon="user"
+					data-transition="slidedown"
+					class="ui-btn ui-btn-icon-left ui-icon-comment">Chat</a></li>
+				<li><a href="#settings" data-icon="user"
+					data-transition="slidedown"
+					class="ui-btn ui-btn-icon-left ui-icon-gear">Settings</a></li>
+				<li><a href="#logout" data-icon="user"
+					data-transition="slidedown"
+					class="ui-btn ui-btn-icon-left ui-icon-user" id="logout">Logout</a></li>
+			</ul>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#" >Visit Akamai Website</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--  Incidents page-->
+	<div id="incidents" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>AIM</h1>
+		</div>
+		<div class="content">
+			<ul data-role="listview" data-theme="g">
+				<li data-icon="false"><a href="#createIncident" data-transition="flow">Create Incident</a></li>
+				<li data-icon="false"><a href="#myincidents">Recent Incidents</a></li>
+				<li data-icon="false"><a href="#searchinciden">Search All Incidents</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--  Incidents page-->
+	<div id="chatPage" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>AIM</h1>
+		</div>
+		<div class="content">
+			<iframe name="framewrap" id="framewrap" style="border:0;position: absolute; left: 6px;height: 100%;width: 100%;top: 47px;background-color: #fff;" src="chat.html"></iframe>
+		</div>
+	</div>
+	<!--  Settings page-->
+	<div id="settings" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>AIM</h1>
+		</div>
+		<div class="content">
+			
+			<div data-role="collapsible" data-collapsed="false">
+			  <h1>Change Password</h1>
+			  <form>
+			  	<input type="text" placeholder="Password..." id="passwordSet">
+				<input type="text" placeholder="Password confirmation..." id="passwordConfSet">
+				<div id="controlGrp">
+					<a href="#"
+						class="smallBtn ui-btn ui-btn-inline ui-shadow ui-corner-all"
+						id="submitChangePassword">Save</a>
+				</div>
+			  </form>
+			</div>
+			<div data-role="collapsible" data-collapsed="true">
+			  <h1>Update Signature</h1>
+			  <form>
+			  	<textarea placeholder="Signature" id="signatureText" ></textarea>
+				<div id="controlGrp">
+					<a href="#"
+						class="smallBtn ui-btn ui-btn-inline ui-shadow ui-corner-all"
+						id="submitChangeSignature">Save</a>
+				</div>
+			  </form>
+			</div>
+		</div>
+	</div>
+	<!-- Create Incident -->
+	<div id="createIncident" data-role="page" data-theme="a" >
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Create Incident</h1>
+			<a href="#mainpage" data-icon="home" class="ui-btn-right" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+		</div>
+		<div class="content">
+			<form>
+				<input type="text" placeholder="Email Address" id="tEmailId"/>
+				<input type="text" placeholder="Subject" id="tSubject"/>
+				<textarea  style="resize:none;height:200px !important; width:600px;" rows="10" cols="30" placeholder="Content" id="tContent"></textarea>
+				<div data-role="fieldcontain">
+				   <label for="select-choice-1" class="select">Severity</label>
+				   <select name="select-choice-1" id="select-choice-1">
+				      <option value="s1">Severity 1/Crisis</option>
+				      <option value="s2">Severity 2</option>
+				      <option value="s3">Severity 3</option>
+				      <option value="s4">Severity 4</option>
+				   </select>
+				</div>
+				<div data-role="fieldcontain">
+				   <label for="select-choice-2" class="select">Phase</label>
+				   <select name="select-choice-2" id="select-choice-2">
+				      <option value="p1">Phase 1/Crisis</option>
+				      <option value="p2">Phase 2</option>
+				      <option value="p3">Phase 3</option>
+				      <option value="p4">Phase 4</option>
+				   </select>
+				</div>
+				<div id="controlGrp">
+					<a href="#"
+						class="smallBtn ui-btn ui-btn-inline ui-shadow ui-corner-all"
+						id="submitIncident">Create Incident</a>
+				</div>
+			</form>
+		</div>
+	</div>
+	<!-- recent Incident -->
+	<div id="myincidents" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Recent Incidents</h1>
+			<a href="#mainpage" data-icon="home" class="ui-btn-right" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+		</div>
+		<div class="content">
+			<!-- TODO -->
+			<ul data-role="listview" data-filter="true" data-inset="true" id="myincidentsList">
+				
+    		</ul>
+		</div>
+	</div>
+	<!-- Search Incident -->
+	<div id="searchinciden" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-rel="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Search Incident</h1>
+			<a href="#mainpage" data-icon="home" class="ui-btn-right" data-iconpos="notext" data-shadow="false" data-iconshadow="false"></a>
+		</div>
+		<div class="content">
+			<div data-role="rangeslider" id="rangeslider">
+			  <label for="range-1a"></label>
+			  <input name="range-1a" id="range-1a" min="2000" max="2014" value="2000" type="range" step="1"/>
+			  <label for="range-1b"></label>
+			  <input name="range-1b" id="range-1b" min="2000" max="2014" value="2014" type="range" step="1"/>
+			</div>
+			<ul data-role="listview" data-filter="true" data-inset="true" id="rangeList">
+				
+    		</ul>
+		</div>
+	</div>
+	<!-- Incident Details page-->
+	<div id="incidentdetails" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Incident Details</h1>
+		</div>
+		<div id="incidentdetailsPage">
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+			<div id="inputcontainer">
+					<table style="width: 100%">
+						<tr>
+							<td width="90%"><input type="text" id="incidentText"
+								class="ui-btn-inline" required /></td>
+						</tr>
+					</table>
+			</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Statistics web page only Incident Stats -->
+	<div id="statsOpenIncidents" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Incident Details</h1>
+		</div>
+		<div class="content">
+		<div id="center">
+			<svg id="test1" class="mypiechart"></svg>
+	    </div>
+		</div>
+	</div>
+	<!--  -->
+	<div id="severityStats" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Severity Details</h1>
+		</div>
+		<div class="content">
+		<div id="center">
+			<svg id="test3" class="mypiechart"></svg>
+	    </div>
+	</div>
+	</div>
+	<!-- Etherpad goes here -->
+	<div id="etherpad" data-role="page" data-theme="a">
+		<div data-role="header">
+		<a href="#mainpage" data-icon="back" data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button" data-transition="flip"></a>
+			<h1>Etherpad</h1>
+		</div>
+		<div class="content">
+			<div id="examplePadBasic"></div>
+			<div id="controlGrp">
+					<a href="#"
+						class="smallBtn ui-btn ui-btn-inline ui-shadow ui-corner-all"
+						id="sharePad">Share this Pad</a>
+			</div>
+		</div>
+	</div>
+	<!-- Popup for sharing link -->
+	<div id="pop" data-role="page" data-theme="a">
+	<div data-role="popup" id="popupShareUrl" data-transition="slidedown" style="padding:5px">
+		Share URL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:<input type="text" id="shareUrlText" /><br/>
+		Email Address:<input type="text" id="shareUrlEmail" /><br/>
+		<br/>
+		<div id="controlGrp"><input type="submit" id="shareLink" value="ShareLink"/></div> 
+	</div>
+	</div>
+	<script type="text/javascript" src="js/akamai.js"></script>
+</body>
+</html>

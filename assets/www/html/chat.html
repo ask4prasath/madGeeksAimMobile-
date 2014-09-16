@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.mobile.dynamic.popup.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog.min.css" />
+<link href="css/jquery.mobile.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.mobile.min.js"></script>
+<script src="js/gmaps.js"></script>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="cordova.js"></script>
+<script src="js/index.js"></script>
+<link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/jquery.md5.js"></script>
+<script type="text/javascript"
+	src="http://dev.jtsage.com/cdn/simpledialog/latest/jquery.mobile.simpledialog2.min.js"></script>
+<title>srndpt</title>
+<script type="text/javascript"
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&v=3"></script>
+<link href="css/srndpt.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div data-role="page" id="chatPage" data-role="page" data-theme="a" >
+		<div data-role="header" data-position="fixed">
+			<a href="html/myconn.html" data-theme="d" data-icon="back"
+				data-iconpos="notext" data-shadow="false" data-iconshadow="false"
+				class="ui-link ui-btn-left ui-btn ui-btn-d ui-icon-carat-l ui-btn-icon-notext ui-corner-all"
+				data-role="button">Open left panel</a>
+			<h1>Chat Log</h1>
+		</div>
+
+		<div data-role="content" id="chatWindow">
+			<div id="messagewindow" style="overflow-y:scroll;">
+			</div>
+			<div id="inputcontainer">
+			<table style="width:100%">
+				<tr>
+					<td width="80%">
+						<input type="text" id="chatText" class="ui-btn-inline"/>
+					</td>
+					<td width="20%">
+						<button type="submit" class="ui-btn-inline" id="chatBtn">Send</button>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

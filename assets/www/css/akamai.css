@@ -1,0 +1,339 @@
+a.loginLink {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+div#controlGrp {
+	padding-left: 60px;
+}
+
+.ui-block-a {
+	width: 80%
+}
+
+.ui-block-b {
+	width: 20%
+}
+
+#map-page,#map-canvas {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+
+.gm-style img {
+	max-width: none;
+}
+
+.gm-style label {
+	width: auto;
+	display: inline;
+}
+
+/* #pagelocationselect .px_chng {
+	height: 100px;
+	width: 100px;
+} */
+
+.ui-icon-list {
+	background: url(img/logo.png) 50% 50% no-repeat;
+	background-size: 38px 38px;
+	width: 30px;
+	height: 30px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	margin: -2px !important;
+	margin-left: -15px !important;
+}
+
+#pageaddnewconn li.a:nth-child(even) {
+	background-color: #DFDCDC;
+}
+
+#pageaddnewconn li.a:nth-child(odd) {
+	background-color: white;
+}
+
+.centered {
+	position: absolute;
+	top: 36%;
+	left: 36%;
+}
+
+.ui-header {
+	background-color: rgb(3, 144, 203) !important;
+	color: white !important;
+}
+
+div.bubbledLeft,div.bubbledRight {
+	position: relative;
+	margin-top: 3px;
+	max-width: 80%;
+	clear: both;
+}
+
+div.bubbledLeft {
+	float: left;
+	margin-right: auto;
+	padding: 4px 10px 4px 15px; /*position within the border*/
+}
+
+div.bubbledLeft:before {
+	z-index: -1 !important;
+	position: absolute !important;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	content: "";
+	border-width: 8px 10px 8px 17px;
+	border-image: url(img/speech_bubble_left_2.png) 8 10 8 17 stretch
+		stretch;
+	-webkit-border-image: url(img/speech_bubble_left_2.png) 8 10 8 17
+		stretch stretch;
+	-moz-border-image: url(img/speech_bubble_left_2.png) 8 10 8 17 stretch
+		stretch;
+	-o-border-image: url(img/speech_bubble_left_2.png) 8 10 8 17 stretch
+		stretch;
+}
+
+div.bubbledRight {
+	float: right;
+	margin-left: auto;
+	text-align: right;
+	padding: 4px 15px 4px 10px; /*position within the border*/
+}
+
+div.bubbledRight:before {
+	z-index: -1;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	content: "";
+	border-width: 8px 17px 8px 10px;
+	border-image: url(img/speech_bubble_right_2.png) 8 17 8 10 stretch
+		stretch;
+	-webkit-border-image: url(img/speech_bubble_right_2.png) 8 17 8 10
+		stretch stretch;
+	-moz-border-image: url(img/speech_bubble_right_2.png) 8 17 8 10 stretch
+		stretch;
+	-o-border-image: url(img/speech_bubble_right_2.png) 8 17 8 10 stretch
+		stretch;
+}
+
+div#chatPage {
+	background-color: transparent;
+}
+
+#chatwindow {
+	position: relative;
+	height: 400px;
+}
+
+#messagewindow,#inputcontainer {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+#messagewindow {
+	overflow: auto;
+	top: 0;
+	bottom: 3em;
+	overflow-y: scroll;
+	position: relative;
+	height: 500px;
+}
+
+#inputcontainer {
+	display: block;
+	bottom: 0;
+	height: 4em;
+	padding: .5em;
+	margin-top: 1em;
+}
+
+#inputcontainer>p {
+	margin: 0;
+}
+
+.mCustomScrollBox {
+	height: 80% !important;
+}
+
+input[type=text] {
+	padding: 5px;
+	border: 2px solid #ccc;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+input[type=text]:focus {
+	border-color: #333;
+}
+
+input[type=submit] {
+	padding: 5px 15px;
+	background: #ccc;
+	border: 0 none;
+	cursor: pointer;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.smallBtn{
+	width:66% !important;
+}
+
+.ui-footer .ui-btn-inner {
+    padding: 1px !important;
+}
+
+.ui-footer .ui-btn-text {
+    font-size: 10px;
+    padding: 5px;
+}
+
+[data-severity^="Severity 1"] > a{
+	background-color: rgb(255,236,236) !important;
+}
+
+[data-severity="Severity 2"] > a{
+	background-color: rgb(255,249,193) !important;
+}
+
+#test1,#test2{
+	left: 37px;
+	position: absolute;
+}
+
+tbody {
+	width: 100%; float: left; display: block; overflow-y: scroll; max-height: 700px;
+}
+tr {
+	float: left; display: block;
+}
+td {
+	float: left; display: block;
+}
+tr {
+	width: 100%; height: auto;
+}
+td {
+	width: 100%; float: left;
+}
+table {
+	width: 100%;
+}
+
+article, aside, figure, footer, header, hgroup, 
+menu, nav, section { display: block; }
+
+body {
+    width: 500px;
+    margin: 20px auto;
+    font: 16px/1.4 Arial, sans-serif;
+    background: #f3eee9;
+}
+
+p {
+    margin: 0 0 1em;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    border-bottom: 1px solid #ddd;
+    margin: 0 0 1em;
+    *zoom: 1;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 33px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.comment-img img {
+    display: block;
+}
+
+.comment-body {
+    overflow: hidden;
+}
+
+.comment .text {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.comment .text p:last-child {
+    margin: 0;
+}
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Decoration */
+
+.comments,
+.comment {
+    position: relative;
+}
+
+.comments:before,
+.comment:before,
+.comment .text:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 65px;
+}
+
+.comments:before {
+    width: 3px;
+    top: -20px;
+    bottom: -20px;
+    background: rgba(0,0,0,0.1);
+}
+
+.comment:before {
+    width: 9px;
+    height: 9px;
+    border: 3px solid #fff;
+    border-radius: 100px;
+    margin: 16px 0 0 -6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+    background: #ccc;
+}
+
+.comment:hover:before {
+    background: orange;
+}
+
+.comment .text:before {
+    top: 18px;
+    left: 78px;
+    width: 9px;
+    height: 9px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #e5e5e5;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+
+div.text{
+	width:90%;
+}
